@@ -1,0 +1,42 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Server {
+  id BigInt @id
+  users User[]
+  contests Contest[]
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  discordId BigInt
+  serverId BigInt
+  server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  entries Entry[]
+}
+
+model Contest {
+  id Int @id @default(autoincrement())
+  serverId BigInt
+  server Server @relation(fields: [serverId], references: [id], onDelete: Cascade)
+  start DateTime @default(now())
+  end DateTime?
+  entries Entry[]
+}
+
+model Entry {
+  id Int @id @default(autoincrement())
+  contestId Int
+  contest Contest @relation(fields: [contestId], references: [id], onDelete: Cascade)
+  userId Int
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  count Int @default(1)
+  timestamp DateTime @default(now())
+  notes String?
+}
