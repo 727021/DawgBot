@@ -44,21 +44,24 @@ client.on(
    */
   async guild => {
     console.info(`Joined new guild: ${guild.name} (id: ${guild.id})`)
-    try {
-      await prisma.server.create({
-        data: {
-          id: guild.id
-        }
-      })
-    } catch (error) {
-      console.error(
-        `Failed to create server entry for guild ${guild.name} (id: ${guild.id}). Leaving the guild.`,
-        error
-      )
-      await guild.leave()
-    }
   }
 )
+
+client.on(Events.GuildDelete, async guild => {
+  console.info(`Removed from guild: ${guild.name} (id: ${guild.id})`)
+  try {
+    await prisma.contest.deleteMany({
+      where: {
+        serverId: guild.id
+      }
+    })
+  } catch (error) {
+    console.error(
+      `Failed to delete contests for guild ${guild.name} (id: ${guild.id})`,
+      error
+    )
+  }
+})
 
 client.on(
   Events.InteractionCreate,
