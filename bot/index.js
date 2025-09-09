@@ -6,7 +6,7 @@ import {
   GatewayIntentBits,
   MessageFlags
 } from 'discord.js'
-import { prisma } from './db.js'
+import { prisma } from '@dawg/common'
 import { loadCommands, registerCommands } from './commands.js'
 
 /** @import { Guild, Interaction } from 'discord.js' */

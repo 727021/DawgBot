@@ -8,7 +8,7 @@ import {
   time,
   subtext
 } from 'discord.js'
-import { prisma } from '../db.js'
+import { prisma } from '@dawg/common'
 
 /** @import { ChatInputCommandInteraction } from 'discord.js' */
 
