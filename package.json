@@ -5,6 +5,9 @@
   "type": "module",
   "scripts": {
     "start:bot": "npm start -w bot",
+    "start:web": "npm start -w web",
+    "dev:web": "npm run dev -w web",
+    "dev": "run-p -l dev:**",
     "lint": "eslint --fix .",
     "format": "prettier --write .",
     "prepare": "run-p -l prepare:**",
