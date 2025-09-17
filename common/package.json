@@ -7,7 +7,8 @@
     "prisma": "^6.15.0"
   },
   "scripts": {
-    "prepare": "prisma generate"
+    "prepare": "prisma generate",
+    "push": "prisma db push"
   },
   "keywords": [],
   "author": "",
