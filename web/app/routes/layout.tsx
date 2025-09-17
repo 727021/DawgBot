@@ -7,13 +7,6 @@ export const loader = async (args: Route.LoaderArgs) => {
   return {}
 }
 
-export const meta = () => {
-  return [
-    { title: 'New React Router App' },
-    { name: 'description', content: 'Welcome to React Router!' }
-  ] satisfies Route.MetaDescriptors
-}
-
 const Layout = () => {
   return (
     <div>

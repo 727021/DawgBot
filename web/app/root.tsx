@@ -11,6 +11,7 @@ import {
 import type { Route } from './+types/root'
 import './app.css'
 import { ClerkProvider } from '@clerk/react-router'
+import type { PropsWithChildren } from 'react'
 
 export const loader = async (args: Route.LoaderArgs) => {
   return rootAuthLoader(args)
@@ -29,7 +30,14 @@ export const links: Route.LinksFunction = () => [
   }
 ]
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const meta = () => {
+  return [
+    { title: 'DawgBot' },
+    { name: 'description', content: 'Welcome to DawgBot!' }
+  ] satisfies Route.MetaDescriptors
+}
+
+export function Layout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <head>
