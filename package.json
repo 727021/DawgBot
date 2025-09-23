@@ -11,7 +11,7 @@
     "lint": "eslint --fix .",
     "format": "prettier --write .",
     "prepare": "run-p -l prepare:**",
-    "prepare:husky": "husky",
+    "prepare:husky": "node .husky/install.mjs",
     "prepare:ws": "npm run prepare --ws --if-present"
   },
   "keywords": [],
@@ -27,7 +27,6 @@
     "globals": "^16.3.0",
     "husky": "^9.1.7",
     "nano-staged": "^0.8.0",
-    "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2"
   },
   "nano-staged": {
@@ -40,5 +39,8 @@
     "bot",
     "web",
     "common"
-  ]
+  ],
+  "dependencies": {
+    "npm-run-all2": "^8.0.4"
+  }
 }
