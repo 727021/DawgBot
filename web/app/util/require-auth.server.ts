@@ -12,7 +12,7 @@ export const requireAuth = async (
   const { isAuthenticated, userId } = await getAuth(args)
 
   if (!isAuthenticated) {
-    return redirect(
+    throw redirect(
       `/sign-in?redirect_url=${encodeURIComponent(args.request.url)}`
     )
   }
