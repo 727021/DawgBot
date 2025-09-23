@@ -1,21 +1,37 @@
 {
   "name": "@dawg/web",
-  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start"
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.31.9",
-    "next": "15.5.2",
-    "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "@clerk/react-router": "^1.10.0",
+    "@dawg/common": "^1.0.0",
+    "@react-router/node": "^7.7.1",
+    "@react-router/serve": "^7.7.1",
+    "@vercel/react-router": "^1.2.3",
+    "clsx": "^2.1.1",
+    "isbot": "^5.1.27",
+    "npm-run-all2": "^8.0.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.7.1",
+    "zlib-sync": "^0.1.10"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "@react-router/dev": "^7.7.1",
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/node": "^20",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "daisyui": "^5.1.12",
+    "tailwindcss": "^4.1.4",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

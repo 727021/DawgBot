@@ -2,12 +2,14 @@
   "name": "@dawg/common",
   "version": "1.0.0",
   "main": "index.js",
+  "types": "index.d.ts",
   "type": "module",
   "devDependencies": {
     "prisma": "^6.15.0"
   },
   "scripts": {
-    "prepare": "prisma generate"
+    "prepare": "prisma generate",
+    "push": "prisma db push"
   },
   "keywords": [],
   "author": "",
