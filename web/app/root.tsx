@@ -57,7 +57,22 @@ export function Layout({ children }: PropsWithChildren) {
 
 export default function App({ loaderData }: Route.ComponentProps) {
   return (
-    <ClerkProvider loaderData={loaderData}>
+    <ClerkProvider loaderData={loaderData} appearance={{
+      variables: {
+        borderRadius: 'var(--radius-box)',
+        colorBackground: 'var(--color-base-200)',
+        colorBorder: 'var(--color-base-content)',
+        colorDanger: 'var(--color-error)',
+        colorForeground: 'var(--color-base-content)',
+        colorInput: 'var(--color-base-100)',
+        colorInputForeground: 'color-mix(in oklab, oklch(97.807% .029 256.847) 20%, #0000)',
+        colorNeutral: 'var(--color-neutral-content)',
+        colorPrimary: 'var(--color-primary)',
+        colorPrimaryForeground: 'var(--color-primary-content)',
+        colorSuccess: 'var(--color-success-content)',
+        colorWarning: 'var(--color-warning-content)',
+      }
+    }}>
       <Outlet />
     </ClerkProvider>
   )
