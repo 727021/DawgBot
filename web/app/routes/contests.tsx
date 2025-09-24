@@ -132,7 +132,7 @@ const Contests = () => {
               </details>
             </li>
           ))}
-          <footer className="footer bg-neutral text-base-content/20 py-5 px-4 footer-horizontal justify-between mt-auto">
+          <footer className="footer bg-base-300 text-base-content/20 py-5 px-4 footer-horizontal justify-between mt-auto">
             <span>DawgBot</span>
             <span>&copy; {new Date().getFullYear()}</span>
           </footer>
