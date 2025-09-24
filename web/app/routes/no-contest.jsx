@@ -1,7 +1,6 @@
-import type { Route } from './+types/contest'
 import { useNavigation } from 'react-router'
 
-const Contest = ({ params }: Route.ComponentProps) => {
+const NoContest = () => {
   const navigation = useNavigation()
   const loading = !!navigation.location
 
@@ -15,8 +14,7 @@ const Contest = ({ params }: Route.ComponentProps) => {
       </div>
     )
   }
-
-  return <div>Contest: {params.contestId}</div>
+  return <div>Choose a contest from the menu.</div>
 }
 
-export default Contest
+export default NoContest

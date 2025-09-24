@@ -82,7 +82,7 @@ const Contests = () => {
         className="drawer-toggle"
         ref={drawerRef}
       />
-      <div className="drawer-content">
+      <div className="drawer-content px-4 py-2">
         <Outlet />
       </div>
       <div className="drawer-side h-full">

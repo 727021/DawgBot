@@ -1,8 +1,9 @@
-import { type RouteConfig, route, layout } from '@react-router/dev/routes'
+import { type RouteConfig, route, layout, index } from '@react-router/dev/routes'
 
 export default [
   layout('routes/layout.tsx', [
     route('', 'routes/contests.tsx', [
+      index('routes/no-contest.jsx'),
       route(':contestId', 'routes/contest.tsx')
     ])
   ]),
