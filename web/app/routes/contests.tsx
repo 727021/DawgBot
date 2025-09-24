@@ -2,11 +2,11 @@ import { requireAuth } from '~/util/require-auth.server'
 import type { Route } from './+types/contests'
 import { prisma } from '@dawg/common'
 import { Outlet, useLoaderData, NavLink, useParams } from 'react-router'
-import { useCallback, useRef } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import { clsx } from 'clsx'
 import { createClerkClient } from '@clerk/react-router/api.server'
 
-type DiscordServer = {
+export type DiscordServer = {
   id: string
   name: string
   icon: string | null
@@ -74,6 +74,16 @@ const Contests = () => {
 
   const { contestId } = useParams()
 
+  const contestData = useMemo(() => {
+    for (const { contests, ...server } of data.servers) {
+      for (const contest of contests) {
+        if (contest.id.toString() === contestId) {
+          return { server, contest }
+        }
+      }
+    }
+  }, [contestId, data.servers])
+
   return (
     <div className="drawer md:drawer-open">
       <input
@@ -83,7 +93,7 @@ const Contests = () => {
         ref={drawerRef}
       />
       <div className="drawer-content px-4 py-2">
-        <Outlet />
+        <Outlet context={contestData} />
       </div>
       <div className="drawer-side h-full">
         <label

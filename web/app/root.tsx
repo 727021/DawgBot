@@ -68,7 +68,7 @@ export default function App({ loaderData }: Route.ComponentProps) {
           colorForeground: 'var(--color-base-content)',
           colorInput: 'var(--color-base-100)',
           colorInputForeground: 'var(--color-base-content)',
-          colorNeutral: 'var(--color-neutral)',
+          colorNeutral: 'var(--color-base-content)',
           colorPrimary: 'var(--color-primary)',
           colorPrimaryForeground: 'var(--color-primary-content)',
           colorSuccess: 'var(--color-success-content)',
